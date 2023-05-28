@@ -1,0 +1,36 @@
+---
+CompileFlags:
+  Add: [
+    -Wall,
+    -Wextra,
+    -target,
+    armv6m-unknown-none-eabi,
+    --sysroot,
+    /opt/devkitpro/devkitARM/arm-none-eabi,
+    -I/opt/devkitpro/libctru/include,
+    ]
+---
+If:
+  PathMatch: [.*\.c, .*\.h]
+CompileFlags:
+  Add: [
+    -xc,
+    -std=gnu2x,
+    -Werror=implicit-function-declaration,
+    -Werror=implicit-int,
+    -Werror=return-type,
+    -Werror=deprecated-non-prototype,
+    -Wstrict-prototypes,
+    -Wimplicit-fallthrough,
+    ]
+---
+If:
+  PathMatch: [.*\.cc, .*\.hh]
+CompileFlags:
+  Add: [
+    -xc++,
+    -std=gnu++2b,
+    -Wc++20-compat,
+    -Wc++2b-compat,
+    ]
+...
