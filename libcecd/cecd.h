@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0+
+#pragma once
 #include <3ds/types.h>
 
 /// Command to send to CECD
