@@ -28,7 +28,7 @@ typedef enum {
 	// reset MAC address filter
 	CEC_COMMAND_RESET_FILTER          = 0x0E,
 
-	//
+	///
 	CEC_COMMAND_DAEMON_STOP           = 0x0F,
 	CEC_COMMAND_DAEMON_START          = 0x10,
 	CEC_COMMAND_EXIT                  = 0x11,
@@ -42,23 +42,27 @@ typedef enum {
 	CEC_COMMAND_END                   = 0x15,
 } CEC_Command;
 
+// clang-format on
+
 /// Abbreviated state of CECD.
 typedef enum {
-	/// Corresponds to CEC_STATE_IDLE 
-	CEC_STATE_ABBREV_IDLE     = 1,
-	/// Corresponds to CEC_STATEs *FINISH*, *POST, and OVER_BOSS 
-	CEC_STATE_ABBREV_INACTIVE = 2,
-	/// Corresponds to CEC_STATE_SCANNING 
-	CEC_STATE_ABBREV_SCANNING = 3,
-	/// Corresponds to CEC_STATE_WIRELESS_READY when some unknown bool is
-	/// true 
-	CEC_STATE_ABBREV_WLREADY  = 4,
-	/// Corresponds to CEC_STATEs besides *FINISH*, *POST, and OVER_BOSS and
-	/// those listed here 
-	CEC_STATE_ABBREV_OTHER    = 5,
-} CEC_StateAbbreviated;
+	/// Corresponds to CEC_STATE_IDLE
+	CEC_STATE_ABBREV_IDLE = 1,
 
-// clang-format on
+	/// Corresponds to CEC_STATEs *FINISH*, *POST, and OVER_BOSS
+	CEC_STATE_ABBREV_INACTIVE = 2,
+
+	/// Corresponds to CEC_STATE_SCANNING
+	CEC_STATE_ABBREV_SCANNING = 3,
+
+	/// Corresponds to CEC_STATE_WIRELESS_READY when some unknown bool is
+	/// true
+	CEC_STATE_ABBREV_WLREADY = 4,
+
+	/// Corresponds to CEC_STATEs besides *FINISH*, *POST, and OVER_BOSS and
+	/// those listed here
+	CEC_STATE_ABBREV_OTHER = 5,
+} CEC_StateAbbreviated;
 
 /// Initializes communication with CECD (streetpass daemon)
 Result cecdInit(void);
