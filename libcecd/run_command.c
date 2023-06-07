@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MPL-2.0+
 #include "cecd-priv.h"
 #include "cecd.h"
 #include <3ds/ipc.h>
