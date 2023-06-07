@@ -30,7 +30,5 @@ CompileFlags:
   Add: [
     -xc++,
     -std=gnu++2b,
-    -Wc++20-compat,
-    -Wc++2b-compat,
     ]
 ...
