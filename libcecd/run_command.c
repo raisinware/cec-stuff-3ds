@@ -2,9 +2,6 @@
 #include "cecd-priv.h"
 #include "cecd.h"
 #include <3ds/ipc.h>
-#include <3ds/result.h>
-#include <3ds/synchronization.h>
-#include <3ds/types.h>
 
 Result CECD_RunCommand(CEC_Command command) {
 	Result res = -1;

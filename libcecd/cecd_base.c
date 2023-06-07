@@ -1,10 +1,8 @@
 // SPDX-License-Identifier: MPL-2.0+
+#include "cecd-priv.h"
 #include "cecd.h"
-#include <3ds/result.h>
 #include <3ds/srv.h>
 #include <3ds/svc.h>
-#include <3ds/synchronization.h>
-#include <3ds/types.h>
 
 static Handle cecdHandle;
 static int cecdRefCount;

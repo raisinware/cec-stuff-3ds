@@ -1,4 +1,7 @@
+// SPDX-License-Identifier: MPL-2.0+
 #pragma once
+#include <3ds/result.h>
+#include <3ds/synchronization.h>
 #include <3ds/types.h>
 
 /// cecd:u Command ID headers
