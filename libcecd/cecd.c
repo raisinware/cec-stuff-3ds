@@ -47,10 +47,10 @@ Handle cecdGetSessionHandle(void) {
 
 Result CECD_RunCommand(CEC_Command command) {
 	Result res = -1;
-	u32* ipcbuf = getThreadCommandBuffer();
+	u32* cmdbuf = getThreadCommandBuffer();
 
-	ipcbuf[0] = IPC_MakeHeader(CID_RUNCOMMAND, 1, 0); // 0x000B0040
-	ipcbuf[1] = command;
+	cmdbuf[0] = IPC_MakeHeader(CID_RUNCOMMAND, 1, 0); // 0x000B0040
+	cmdbuf[1] = command;
 
 	res = svcSendSyncRequest(cecdHandle);
 
@@ -58,15 +58,15 @@ Result CECD_RunCommand(CEC_Command command) {
 		return res;
 	}
 
-	return (Result)ipcbuf[1];
+	return (Result)cmdbuf[1];
 }
 
 Result CECD_RunCommandAlt(CEC_Command command) {
 	Result ret = -1;
-	u32* ipcbuf = getThreadCommandBuffer();
+	u32* cmdbuf = getThreadCommandBuffer();
 
-	ipcbuf[0] = IPC_MakeHeader(CID_RUNCOMMANDALT, 1, 0); // 0x000C0040
-	ipcbuf[1] = command;
+	cmdbuf[0] = IPC_MakeHeader(CID_RUNCOMMANDALT, 1, 0); // 0x000C0040
+	cmdbuf[1] = command;
 
 	ret = svcSendSyncRequest(cecdHandle);
 
@@ -74,6 +74,6 @@ Result CECD_RunCommandAlt(CEC_Command command) {
 		return ret;
 	}
 
-	return (Result)ipcbuf[1];
+	return (Result)cmdbuf[1];
 }
 
