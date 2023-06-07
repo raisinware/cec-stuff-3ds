@@ -2,6 +2,8 @@
 #pragma once
 #include <3ds/types.h>
 
+// clang-format off
+
 /// Command to send to CECD
 /// TODO: more detailed descriptions for each command
 typedef enum {
@@ -55,6 +57,8 @@ typedef enum {
 	/// those listed here 
 	CEC_STATE_ABBREV_OTHER    = 5,
 } CEC_StateAbbreviated;
+
+// clang-format on
 
 /// Initializes communication with CECD (streetpass daemon)
 Result cecdInit(void);
