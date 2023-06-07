@@ -4,7 +4,7 @@
 #include <3ds/ipc.h>
 
 Result CECD_RunCommand(CEC_Command command) {
-	Result res = -1;
+	Result res = 0;
 	u32* cmdbuf = getThreadCommandBuffer();
 
 	cmdbuf[0] = IPC_MakeHeader(CID_RUNCOMMAND, 1, 0); // 0x000B0040
@@ -20,7 +20,7 @@ Result CECD_RunCommand(CEC_Command command) {
 }
 
 Result CECD_RunCommandAlt(CEC_Command command) {
-	Result res = -1;
+	Result res = 0;
 	u32* cmdbuf = getThreadCommandBuffer();
 
 	cmdbuf[0] = IPC_MakeHeader(CID_RUNCOMMANDALT, 1, 0); // 0x000C0040
