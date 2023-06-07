@@ -5,7 +5,11 @@
 #include <3ds/types.h>
 
 /// cecd:u Command ID headers
+// clang-format off
+// why is it putting a space before the colon whyyyyyy
 enum: u16 {
+	// clang-format on
+	// this is so dumb
 	CID_OPENRAWFILE = 0x0001,
 	CID_READRAWFILE = 0x0002,
 	CID_READMESSAGE = 0x0003,
