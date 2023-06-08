@@ -8,7 +8,7 @@ Result CECD_RunCommand(CEC_Command command) {
 	u32* cmdbuf = getThreadCommandBuffer();
 
 	cmdbuf[0] = IPC_MakeHeader(CID_RUNCOMMAND, 1, 0); // 0x000B0040
-	cmdbuf[1] = command;
+	cmdbuf[1] = (u32)command;
 
 	res = svcSendSyncRequest(cecdGetSessionHandle());
 
@@ -24,7 +24,7 @@ Result CECD_RunCommandAlt(CEC_Command command) {
 	u32* cmdbuf = getThreadCommandBuffer();
 
 	cmdbuf[0] = IPC_MakeHeader(CID_RUNCOMMANDALT, 1, 0); // 0x000C0040
-	cmdbuf[1] = command;
+	cmdbuf[1] = (u32)command;
 
 	res = svcSendSyncRequest(cecdGetSessionHandle());
 

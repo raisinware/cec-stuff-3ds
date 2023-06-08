@@ -18,7 +18,7 @@ Result CECD_GetCecStateAbbreviated(CEC_StateAbbreviated* out) {
 	res = (Result)cmdbuf[1];
 
 	if (R_SUCCEEDED(res) && out) {
-		*out = cmdbuf[2];
+		*out = (CEC_StateAbbreviated)cmdbuf[2];
 	}
 
 	return res;
